@@ -12,6 +12,13 @@
 		A0FB4058222517090052EA32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0FB4056222517090052EA32 /* Main.storyboard */; };
 		A0FB405A2225170B0052EA32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0FB40592225170B0052EA32 /* Assets.xcassets */; };
 		A0FB405D2225170B0052EA32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0FB405B2225170B0052EA32 /* LaunchScreen.storyboard */; };
+		A0FB408B222519320052EA32 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FB4083222519320052EA32 /* FMDatabaseAdditions.m */; };
+		A0FB408C222519320052EA32 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FB4086222519320052EA32 /* FMDatabaseQueue.m */; };
+		A0FB408D222519320052EA32 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FB4088222519320052EA32 /* FMResultSet.m */; };
+		A0FB408E222519320052EA32 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FB4089222519320052EA32 /* FMDatabase.m */; };
+		A0FB408F222519320052EA32 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = A0FB408A222519320052EA32 /* FMDatabasePool.m */; };
+		A0FB409122251B400052EA32 /* DepartmentListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB409022251B400052EA32 /* DepartmentListVC.swift */; };
+		A0FB409322251B6F0052EA32 /* EmployeeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FB409222251B6F0052EA32 /* EmployeeListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,20 @@
 		A0FB40592225170B0052EA32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0FB405C2225170B0052EA32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0FB405E2225170B0052EA32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0FB407F222519310052EA32 /* HumanResources-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HumanResources-Bridging-Header.h"; sourceTree = "<group>"; };
+		A0FB4080222519320052EA32 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		A0FB4081222519320052EA32 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		A0FB4082222519320052EA32 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		A0FB4083222519320052EA32 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		A0FB4084222519320052EA32 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		A0FB4085222519320052EA32 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		A0FB4086222519320052EA32 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		A0FB4087222519320052EA32 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		A0FB4088222519320052EA32 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		A0FB4089222519320052EA32 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		A0FB408A222519320052EA32 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		A0FB409022251B400052EA32 /* DepartmentListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentListVC.swift; sourceTree = "<group>"; };
+		A0FB409222251B6F0052EA32 /* EmployeeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +59,7 @@
 		A0FB4046222517090052EA32 = {
 			isa = PBXGroup;
 			children = (
+				A0FB407E2225190D0052EA32 /* fmdb */,
 				A0FB4051222517090052EA32 /* HumanResources */,
 				A0FB4050222517090052EA32 /* Products */,
 			);
@@ -57,11 +79,33 @@
 				A0FB4052222517090052EA32 /* AppDelegate.swift */,
 				A0FB4054222517090052EA32 /* ViewController.swift */,
 				A0FB4056222517090052EA32 /* Main.storyboard */,
+				A0FB409022251B400052EA32 /* DepartmentListVC.swift */,
+				A0FB409222251B6F0052EA32 /* EmployeeListVC.swift */,
 				A0FB40592225170B0052EA32 /* Assets.xcassets */,
 				A0FB405B2225170B0052EA32 /* LaunchScreen.storyboard */,
 				A0FB405E2225170B0052EA32 /* Info.plist */,
 			);
 			path = HumanResources;
+			sourceTree = "<group>";
+		};
+		A0FB407E2225190D0052EA32 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				A0FB4082222519320052EA32 /* FMDatabase.h */,
+				A0FB4089222519320052EA32 /* FMDatabase.m */,
+				A0FB4080222519320052EA32 /* FMDatabaseAdditions.h */,
+				A0FB4083222519320052EA32 /* FMDatabaseAdditions.m */,
+				A0FB4084222519320052EA32 /* FMDatabasePool.h */,
+				A0FB408A222519320052EA32 /* FMDatabasePool.m */,
+				A0FB4085222519320052EA32 /* FMDatabaseQueue.h */,
+				A0FB4086222519320052EA32 /* FMDatabaseQueue.m */,
+				A0FB4087222519320052EA32 /* FMDB.h */,
+				A0FB4081222519320052EA32 /* FMResultSet.h */,
+				A0FB4088222519320052EA32 /* FMResultSet.m */,
+				A0FB407F222519310052EA32 /* HumanResources-Bridging-Header.h */,
+			);
+			name = fmdb;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +140,7 @@
 				TargetAttributes = {
 					A0FB404E222517090052EA32 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -136,7 +181,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0FB4055222517090052EA32 /* ViewController.swift in Sources */,
+				A0FB408C222519320052EA32 /* FMDatabaseQueue.m in Sources */,
+				A0FB409122251B400052EA32 /* DepartmentListVC.swift in Sources */,
 				A0FB4053222517090052EA32 /* AppDelegate.swift in Sources */,
+				A0FB408E222519320052EA32 /* FMDatabase.m in Sources */,
+				A0FB408F222519320052EA32 /* FMDatabasePool.m in Sources */,
+				A0FB409322251B6F0052EA32 /* EmployeeListVC.swift in Sources */,
+				A0FB408B222519320052EA32 /* FMDatabaseAdditions.m in Sources */,
+				A0FB408D222519320052EA32 /* FMResultSet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +334,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HZ26D79YNZ;
 				INFOPLIST_FILE = HumanResources/Info.plist;
@@ -291,6 +344,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Kiwook-Swift.HumanResources";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HumanResources/HumanResources-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -300,6 +355,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HZ26D79YNZ;
 				INFOPLIST_FILE = HumanResources/Info.plist;
@@ -309,6 +365,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Kiwook-Swift.HumanResources";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HumanResources/HumanResources-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
