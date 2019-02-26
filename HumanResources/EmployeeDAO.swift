@@ -94,4 +94,36 @@ class EmployeeDAO {
         }
         return employeeList
     }
+    
+    
+    func get(empCd: Int) -> EmployeeVO? {
+        // 1. 질의 실행
+        
+        let sql = """
+            SELECT emp_cd, emp_name, join_date, state_cd, department.depart_title
+            FROM employee
+            JOIN department On department.depart_cd = employee.depart_cd
+            WHERE emp_cd = ?
+            """
+        
+        let rs = self.fmdb.executeQuery(sql, whitArgumentsIn: [empCd])
+        
+        // 결과 집합 처리
+        if let _rs = rs { // 결과 집합이 옵셔널 타입이므로, 바인딩 변수를 통해 옵셔널 해제한다.
+            _rs.next()
+            
+            var record = EmployeeVO()
+            record.empCd = Int(_rs.int(forColumn: "emp_cd"))
+            record.empName = _rs.string(forColumn: "emp_name")!
+            record.joinDate = _rs.string(forColumn: "join_date")!
+            record.departTitle = _rs.string(forColumn: "depart_title")!
+            
+            let cd = Int(_rs.int(forColumn: "state_cd"))
+            record.stateCd = EmpStateType(rawValue: cd)!
+            
+            return record
+        } else { // 결과 집합이 없을 경우 nil을 반환한다.
+            return nil
+        }
+    }
 }
