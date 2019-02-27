@@ -89,4 +89,46 @@ class DepartmentInfoVC: UITableViewController {
             return self.empList.count
         }
     }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            // 부서 정보 목록을 구성하는 코드
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DEPART_CELL")
+            
+            cell?.textLabel?.font = UIFont.systemFont(ofSize: 13)
+            cell?.detailTextLabel?.font = UIFont.systemFont(ofSize: 12)
+            
+            switch indexPath.row {
+            case 0 :
+                cell?.textLabel?.text = "부서 코드"
+                cell?.detailTextLabel?.text = "\(self.departInfo.departCd)"
+            case 1 :
+                cell?.textLabel?.text = "부서명"
+                cell?.detailTextLabel?.text = self.departInfo.departTitle
+            case 2 :
+                cell?.textLabel?.text = "부서 주소"
+                cell?.detailTextLabel?.text = self.departInfo.departAddr
+            default :
+                () // 작성할 구문이 없을 때 넣어주는 더미 코드
+            }
+            return cell!
+        } else { // 소속 사원 영역
+            // 소속 사원 목록을 구성하는 코드
+            let row = self.empList[indexPath.row]
+            
+            // 테이블 뷰 셀 설정
+            let cell = tableView.dequeueReusableCell(withIdentifier: "EMP_CELL")
+            cell?.textLabel?.text = "\(row.empName) (입사일: \(row.joinDate))"
+            cell?.textLabel?.font = UIFont.systemFont(ofSize: 12)
+            
+            // 재직 상태를 나타내는 세그먼트 컨트롤
+            let state = UISegmentedControl(items: ["재직중", "휴직", "퇴사"])
+            state.frame.origin.x = self.view.frame.width - state.frame.width - 10
+            state.frame.origin.y = 10
+            state.selectedSegmentIndex = row.stateCd.rawValue // DB에 저장된 상태값으로 설정
+            
+            cell?.contentView.addSubview(state)
+            return cell!
+        }
+    }
 }
