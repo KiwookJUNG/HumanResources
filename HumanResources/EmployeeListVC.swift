@@ -91,4 +91,17 @@ class EmployeeListVC : UITableViewController {
         }))
     }
     
+    @IBAction func editing(_ sender: Any) {
+        if self.isEditing == false {
+            // 현재 편집 모드가 아닐 때
+            self.setEditing(true, animated: true)
+            (sender as? UIBarButtonItem)?.title = "Done"
+        } else {
+            // 현재 편집 모드일 때
+            self.setEditing(false, animated: true)
+            (sender as? UIBarButtonItem)?.title = "Edit"
+        }
+    }
+    
+    
 }
