@@ -152,4 +152,18 @@ class DepartmentInfoVC: UITableViewController {
             return false
         }
     }
+    
+    @objc func changeState(_ sender: UISegmentedControl) {
+        // 1. 사원 코드
+        let empCd = sender.tag
+        // 2. 재직 상태
+        let stateCd = EmpStateType(rawValue: sender.selectedSegmentIndex)
+        
+        // 재직 상태 업데이트
+        if self.empDAO.editState(empCd: empCd, stateCd: stateCd!) {
+            let alert = UIAlertController(title: nil, message: "재직 상태가 변경되었습니다.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "확인", style: .cancel))
+            self.present(alert, animated: false)
+        }
+    }
 }
