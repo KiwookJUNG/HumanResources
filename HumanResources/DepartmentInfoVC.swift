@@ -44,4 +44,28 @@ class DepartmentInfoVC: UITableViewController {
         }
     }
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        // 1. 헤더에 들어갈 레이블 객체 정의
+        let textHeader = UILabel(frame: CGRect(x: 35, y: 5, width: 200, height: 30))
+        textHeader.font = UIFont.systemFont(ofSize: 15, weight: 2.5)
+        textHeader.textColor = UIColor(displayP3Red: 0.03, green: 0.28, blue: 0.71, alpha: 1.0)
+        
+        // 2. 헤더에 들어갈 이미지 뷰 객체 정의
+        let icon = UIImageView()
+        icon.frame = CGRect(x: 10, y: 10, width: 20, height: 20)
+        
+        // 3. 섹션에 따라 타이틀과 이미지 다르게 설정
+        if section == 0 {
+            textHeader.text = "부서 정보"
+            icon.image = UIImage(imageLiteralResourceName: "depart")
+        } else {
+            textHeader.text = "소속 사원"
+            icon.image = UIImage(imageLiteralResourceName: "employee")
+        }
+    }
+    
 }
