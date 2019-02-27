@@ -81,4 +81,12 @@ class DepartmentInfoVC: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
     }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 3
+        } else {
+            return self.empList.count
+        }
+    }
 }
