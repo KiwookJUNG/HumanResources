@@ -32,4 +32,21 @@ class EmployeeListVC : UITableViewController {
         self.initUI()
     }
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.empList.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let rowData = self.empList[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EMP_CELL")
+        
+        // 사원명 + 재직 상태 출력
+        cell?.textLabel?.text = rowData.empName + "(\(rowData.stateCd.desc()))"
+        cell?.textLabel?.font = UIFont.systemFont(ofSize: 14)
+        
+        cell?.detailTextLabel?.text = rowData.departTitle
+        cell?.detailTextLabel?.font = UIFont.systemFont(ofSize: 12)
+        
+        return cell!
+    }
 }
