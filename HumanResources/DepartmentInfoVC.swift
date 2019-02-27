@@ -127,8 +127,29 @@ class DepartmentInfoVC: UITableViewController {
             state.frame.origin.y = 10
             state.selectedSegmentIndex = row.stateCd.rawValue // DB에 저장된 상태값으로 설정
             
+           
+            state.tag = row.empCd // 액션 메소드에서 참조할 수 있도록 사원 코드를 저장
+            state.addTarget(self, action: #selector(self.changeState(_:)), for: .valueChanged)
+            
             cell?.contentView.addSubview(state)
             return cell!
+        }
+    }
+    
+    func editState(empCd: Int, stateCd: EmpStateType) -> Bool {
+        do {
+            let sql = " UPDATE Employee SET state_cd = ? WHERE emp_cd = ? "
+            // 인자값 배열
+            var params = [Any]()
+            params.append(stateCd.rawValue) // 재직상태 코드 0,1,2
+            params.append(empCd)
+            
+            // 업데이트 실행
+            try self.fmdb.executeUpdate(sql,values: params)
+            return true
+        } catch let error as NSError {
+            print("UPDATE Error : \(error.localizedDescription)")
+            return false
         }
     }
 }
