@@ -30,6 +30,12 @@ class EmployeeListVC : UITableViewController {
     override func viewDidLoad() {
         self.empList = self.empDAO.find()
         self.initUI()
+        
+        // 당겨서 새로고칢 기능
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.attributedTitle = NSAttributedString(string: "당겨서 새로고침")
+        
+        self.refreshControl?.addTarget(self, action: #selector(pullToRefresh(_:)), for: .valueChanged)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -104,7 +110,7 @@ class EmployeeListVC : UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return UITableViewCellEditingStyle.delete
+        return UITableViewCell.EditingStyle.delete
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -118,4 +124,13 @@ class EmployeeListVC : UITableViewController {
         }
     }
     
+    
+    @objc func pullToRefresh(_ sender: Any) {
+        // 새로고침 시 갱신되어야 할 내용들
+        self.empList = self.empDAO.find()
+        self.tableView.reloadData()
+        
+        // 당겨서 새로고침 기능 종료
+        self.refreshControl?.endRefreshing()
+    }
 }
